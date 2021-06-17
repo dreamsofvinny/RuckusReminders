@@ -22,9 +22,9 @@ class Event:
 
     def to_date(date_string):
     """
-    Converts month/day/year string into a date type
+    Converts "MM/DD/YYYY" string into a date type
     Args:
-        date_string (str): a string to convert "MM/DD/YYYY"
+        date_string (str): a string to convert
     Returns:
         the_date (date): the date for this event
     """
@@ -33,7 +33,16 @@ class Event:
     return the_date
 
     def to_time(time_string):
-        return 0
+    """
+    Converts "23:59" string into a time type
+    Args:
+        time_string (str): a string to convert
+    Returns:
+        the_time (time): the time for this event
+    """
+        hour, minute = time_string.split(":")
+        the_time = time(int(hour), int(minute))
+        return the_time
 
 
 def main():
